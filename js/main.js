@@ -13,7 +13,7 @@ $(document).ready(function() {
 	});
 });
 
-// Scroll the background layers 
+// Scroll the background layers
 function parallaxScroll(){
 	const scrolled = $(window).scrollTop();
 
@@ -99,7 +99,7 @@ $.fn.isInViewport = function() {
 // Function to build dot nav
 function buildNav() {
 	let navigation = '<ul class="side-nav">';
-	
+
 	$('section').each(function() {
 		let sectionName = $(this).find('h2').text();
 		let sectionId = $(this).attr('id');
@@ -134,7 +134,7 @@ $(window).on('resize scroll', function() {
 
 		let thisSection = $(this).parents('section').attr('id');
 		let $thisSectionNav = $('.side-nav .' + thisSection);
-		
+
 		if( $(this).isInViewport() ) {
 			$(thisSection).addClass('active');
 			$thisSectionNav.addClass('active');
@@ -159,8 +159,8 @@ $(document).ready(function() {
 		.click(function(event) {
 			// On-page links
 			if (
-				location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
-				&& 
+				location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
+				&&
 				location.hostname == this.hostname
 			) {
 				// Figure out element to scroll to
@@ -187,73 +187,73 @@ $(document).ready(function() {
 			  }
 			}
 		});
-});	
+});
 /////////////////////////
 //    Make it snow!    //
 /////////////////////////
 
-// function makeItSnow(){
+function makeItSnow(){
 
-// 	// Create snow div
-// 	$('body').append('<div class="snow"></div>').addClass('snowy');
+	// Create snow div
+	$('body').append('<div class="snow"></div>').addClass('snowy');
 
-// 	// Create random numbers!
-// 	function getRandomArbitrary(min, max) {
-// 	  return Math.random() * (max - min) + min;
-// 	}
+	// Create random numbers!
+	function getRandomArbitrary(min, max) {
+	  return Math.random() * (max - min) + min;
+	}
 
-// 	for (var i = 0; i <= 300; i++) {
-// 		// Name the flakes
-// 		const thisFlake = '.flake-' + i;
+	for (var i = 0; i <= 300; i++) {
+		// Name the flakes
+		const thisFlake = '.flake-' + i;
 
-// 		// Create snowflake
-// 		$('.snow').prepend('<i class="fa fa-snowflake-o flake flake-' + i + '" aria-hidden="true"></i>');
+		// Create snowflake
+		$('.snow').prepend('<i class="fa fa-snowflake-o flake flake-' + i + '" aria-hidden="true"></i>');
 
-// 		// Set random animation time
-// 		$(thisFlake).css('--animation-time', getRandomArbitrary(3, 80) +'s');
+		// Set random animation time
+		$(thisFlake).css('--animation-time', getRandomArbitrary(3, 80) +'s');
 
-// 		// Set random font size
-// 		$(thisFlake).css('font-size', getRandomArbitrary(5, 18));
+		// Set random font size
+		$(thisFlake).css('font-size', getRandomArbitrary(5, 18));
 
-// 		// Add some random blur
-// 		$(thisFlake).css('filter', 'blur(' + getRandomArbitrary(0, 3) +'px)');
+		// Add some random blur
+		$(thisFlake).css('filter', 'blur(' + getRandomArbitrary(0, 3) +'px)');
 
-// 		// Make snow fall only downward
-// 		let flakeEntry = getRandomArbitrary(-10, 120);
-// 		let flakeOutry = flakeEntry + getRandomArbitrary(10, 100);
+		// Make snow fall only downward
+		let flakeEntry = getRandomArbitrary(-10, 120);
+		let flakeOutry = flakeEntry + getRandomArbitrary(10, 100);
 
-// 		// Define animation steps
-// 		let fallStart = {
-// 			'transform': 'translate3d(' + getRandomArbitrary(-10, 110) + 'vw, ' + flakeEntry + 'vh, 100px) rotateZ(0) scale(1)',
-// 			'opacity': '0'
-// 		};
-// 		let fallMid = {
-// 			'opacity': '1'
-// 		}
-// 		let fallStop = {
-// 			'transform': 'translate3d(' + getRandomArbitrary(-10, 110) + 'vw, ' + flakeOutry + 'vw, 100px) rotateZ(359deg) scale(1.75)',
-// 			'opacity': '0'
-// 		};
+		// Define animation steps
+		let fallStart = {
+			'transform': 'translate3d(' + getRandomArbitrary(-10, 110) + 'vw, ' + flakeEntry + 'vh, 100px) rotateZ(0) scale(1)',
+			'opacity': '0'
+		};
+		let fallMid = {
+			'opacity': '1'
+		}
+		let fallStop = {
+			'transform': 'translate3d(' + getRandomArbitrary(-10, 110) + 'vw, ' + flakeOutry + 'vw, 100px) rotateZ(359deg) scale(1.75)',
+			'opacity': '0'
+		};
 
 
-// 		// Define keyframes
-// 		$.keyframe.define([{
-// 			name: 'fall-' + i,
-// 			'0%':   fallStart,
-// 			'50%':  fallMid,
-// 			'100%': fallStop
-// 		}]);
+		// Define keyframes
+		$.keyframe.define([{
+			name: 'fall-' + i,
+			'0%':   fallStart,
+			'50%':  fallMid,
+			'100%': fallStop
+		}]);
 
-// 		// Set animation 
-// 		$(thisFlake).css('animation', 'spin-and-fade var(--animation-time) ease-in-out infinite, fall-' + i + ' var(--animation-time) ease-in-out infinite');
+		// Set animation
+		$(thisFlake).css('animation', 'spin-and-fade var(--animation-time) ease-in-out infinite, fall-' + i + ' var(--animation-time) ease-in-out infinite');
 
-// 	}
+	}
 
-// 	// Start transforms
-// 	$(this).addClass('clicked');
+	// Start transforms
+	$(this).addClass('clicked');
 
-// 	// Remove the button entirely after one second
-// 	setTimeout( () => { $(this).hide() }, 1000 );
-// }
+	// Remove the button entirely after one second
+	setTimeout( () => { $(this).hide() }, 1000 );
+}
 
-// $('button.make-snow').on('click', makeItSnow);
+$('button.make-snow').on('click', makeItSnow);
