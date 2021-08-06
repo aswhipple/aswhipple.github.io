@@ -386,7 +386,8 @@ section {
     font-weight: 400;
     margin-bottom: .5em; }
 .home #more {
-  background: #592E3F; }
+  /* background: #592E3F; } */
+  background: #111513; }
 .home #projects {
   background: #111513; }
   .home #projects .container {
